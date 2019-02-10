@@ -1,0 +1,14 @@
+2019-01-27 09:23:57: -- Analysis Started by On File Change Incremental
+2019-01-27 09:23:58: Changes: 1, Conflicts: 0, CopyTime: 0, CopyState: 0/0, Errors: 0, All: 17
+2019-01-27 09:23:58: Left to Right: Copy File: 1 
+2019-01-27 09:23:58: == Sync Started by On File Change Incremental
+2019-01-27 09:23:58: Copy New 'C:/wamp/www/Wynne's Diary/wynnes-diary-editor/scss/_bootstrap-grid.scss' -> 'ftp://nlls4.a2hosting.com/wp-content/plugins/wynnes-diary-editor/scss/_bootstrap-grid.scss'
+2019-01-27 09:23:58: == Sync Complete. Time: 00:00:00, Speed: 0 bytes/s, OK: 1, Errors: 0
+2019-01-27 09:23:59: -- Analysis Started by On File Change PostSync Re-Analyze
+2019-01-27 09:23:59: Changes: 2, Conflicts: 0, CopyTime: 0, CopyState: 0/0, Errors: 0, All: 19
+2019-01-27 09:23:59: Left to Right: Copy File: 2 
+2019-01-27 09:24:00: == Sync Started by On File Change PostSync Re-Analyze
+2019-01-27 09:24:00: Create Folder 'ftp://nlls4.a2hosting.com/wp-content/plugins/wynnes-diary-editor/css'
+2019-01-27 09:24:00: Copy New 'C:/wamp/www/Wynne's Diary/wynnes-diary-editor/css/_bootstrap-grid.css' -> 'ftp://nlls4.a2hosting.com/wp-content/plugins/wynnes-diary-editor/css/_bootstrap-grid.css'
+2019-01-27 09:24:00: == Sync Complete. Time: 00:00:00, Speed: 0 bytes/s, OK: 2, Errors: 0
+2019-01-27 09:24:00: 

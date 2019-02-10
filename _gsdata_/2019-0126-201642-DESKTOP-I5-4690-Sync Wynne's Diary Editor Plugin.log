@@ -1,0 +1,14 @@
+2019-01-26 20:16:44: -- Analysis Started by On File Change Incremental
+2019-01-26 20:16:44: Changes: 1, Conflicts: 0, CopyTime: 0, CopyState: 0/0, Errors: 0, All: 14
+2019-01-26 20:16:44: Left to Right: Copy File: 1 
+2019-01-26 20:16:44: == Sync Started by On File Change Incremental
+2019-01-26 20:16:45: Copy Over 'C:/wamp/www/Wynne's Diary/wynnes-diary-editor/prepros-6.config' -> 'ftp://nlls4.a2hosting.com/wp-content/plugins/wynnes-diary-editor/prepros-6.config'
+2019-01-26 20:16:45: == Sync Complete. Time: 00:00:01, Speed: 6.62 KB/s, OK: 1, Errors: 0
+2019-01-26 20:16:46: -- Analysis Started by On File Change PostSync Re-Analyze
+2019-01-26 20:16:47: Changes: 2, Conflicts: 0, CopyTime: 0, CopyState: 0/0, Errors: 0, All: 15
+2019-01-26 20:16:47: Left to Right: Copy File: 2 
+2019-01-26 20:16:47: == Sync Started by On File Change PostSync Re-Analyze
+2019-01-26 20:16:47: Copy Over 'C:/wamp/www/Wynne's Diary/wynnes-diary-editor/diary.css' -> 'ftp://nlls4.a2hosting.com/wp-content/plugins/wynnes-diary-editor/diary.css'
+2019-01-26 20:16:47: Copy New 'C:/wamp/www/Wynne's Diary/wynnes-diary-editor/diary.css.map' -> 'ftp://nlls4.a2hosting.com/wp-content/plugins/wynnes-diary-editor/diary.css.map'
+2019-01-26 20:16:48: == Sync Complete. Time: 00:00:01, Speed: 0 bytes/s, OK: 2, Errors: 0
+2019-01-26 20:16:48: 

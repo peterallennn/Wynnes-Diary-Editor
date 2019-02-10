@@ -1,0 +1,7 @@
+2019-01-26 20:16:20: -- Analysis Started by On File Change Incremental
+2019-01-26 20:16:20: Changes: 1, Conflicts: 0, CopyTime: 0, CopyState: 0/0, Errors: 0, All: 13
+2019-01-26 20:16:20: Left to Right: Copy File: 1 
+2019-01-26 20:16:20: == Sync Started by On File Change Incremental
+2019-01-26 20:16:20: Copy New 'C:/wamp/www/Wynne's Diary/wynnes-diary-editor/scss/diary.scss' -> 'ftp://nlls4.a2hosting.com/wp-content/plugins/wynnes-diary-editor/scss/diary.scss'
+2019-01-26 20:16:21: == Sync Complete. Time: 00:00:01, Speed: 664 bytes/s, OK: 1, Errors: 0
+2019-01-26 20:16:22: 
