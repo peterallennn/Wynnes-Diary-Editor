@@ -31,15 +31,15 @@
 			</table>
 
 			<div class="live-preview-container">
-				<iframe src="/the-diary/?admin_preview#<?= $year->name . ',' . date('M', strtotime($month->name)) ?>" frameborder="0" class="live-preview"></iframe>
+				<iframe src="/the-diary/?admin_preview#<?= $year->name . ',' . date('M', strtotime($month->name)) ?>" frameborder="0" class="live-preview" id="live-preview"></iframe>
 			</div>
 		</div>
-		<div class="col-md-5">
+		<div class="description col-md-5">
 			<h3>Edit the description for <?= $month->name ?></h3>
 
-			<? wp_editor($month->description, 'category-description-editor', ['textarea_name' => 'category_description', 'media_buttons' => false]) ?>
+			<? wp_editor(apply_filters('the_content', $month->description), 'category-description-editor', ['textarea_name' => 'category_description', 'media_buttons' => false, 'wpautop' => false, 'quicktags' => false]) ?>
 
-			<a href="#" class="update-month-description button button-primary">Save Description</a>
+			<a href="#" class="update-month-description init-wdeditor-ajax button button-primary" data-month="<?= $month->term_id ?>" data-method="wdeditor_ajax_update_month_description">Save Description</a>
 		</div>
 	</div>
 </div>

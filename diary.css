@@ -3142,4 +3142,10 @@ html {
     .diary-month-editor .live-preview-container .live-preview:hover {
       overflow: scroll; }
 
+.diary-month-editor .description h3 {
+  margin-top: 0; }
+
+.diary-month-editor .description .wp-editor-wrap {
+  margin-bottom: 10px; }
+
 /*# sourceMappingURL=diary.css.map */

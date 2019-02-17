@@ -16,8 +16,14 @@ require 'inc/pages.php';
 require 'inc/menu.php';
 require 'inc/assets.php';
 
+require 'inc/ajax-backend.php';
+//require 'inc/ajax-frontend.php';
+
 // Register the admin menu
 add_action( 'admin_menu', 'wdeditor_admin_menu' );
 
 // Register 'diary.css' style
 add_action( 'admin_enqueue_scripts', 'wpeditor_load_style' );
+
+// Register 'scripts.js' script
+add_action( 'admin_enqueue_scripts', 'wdedtior_load_scripts' );
