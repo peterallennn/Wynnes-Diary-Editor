@@ -7,7 +7,7 @@
 	
 	<div class="row">
 		<div class="col-md-7">
-			<table class="wpeditor-posts wp-list-table widefat fixed striped pages">
+			<table class="wpeditor-posts wp-list-table widefat fixed striped pages wdeditor-sortable-posts">
 				<thead>
 					<tr>
 						<td class="order-post">Order</td>

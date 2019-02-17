@@ -21,13 +21,59 @@ jQuery(document).ready(function($) {
 
 			WDEdtiorUpdateMonthLivePreview();
 		});
-	})
+	});
+
+	WDEditorSortMonthPosts();
 });
 
+/**
+ * Sorting functionality for ordering posts within a month
+ */
+function WDEditorSortMonthPosts()
+{
+	jQuery('.wdeditor-sortable-posts').sortable({
+	  	containerSelector: 'table',
+	  	itemPath: '> tbody',
+	  	itemSelector: 'tr',
+	  	group: 'simple_with_animation',
+		  pullPlaceholder: false,
+
+	  	onDrop: function  (item, container, _super) {
+	    	var clonedItem = jQuery('<tr/>').css({height: 0});
+	    	item.before(clonedItem);
+	    	clonedItem.animate({'height': item.height()});
+
+	    	item.animate(clonedItem.position(), function  () {
+	      		clonedItem.detach();
+	      		_super(item, container);
+	    	});
+	  	},
+
+	  	// set $item relative to cursor position
+	  onDragStart: function (item, container, _super) {
+	    var offset = item.offset(),
+	        pointer = container.rootGroup.pointer;
+
+	    adjustment = {
+	      left: pointer.left - offset.left,
+	      top: pointer.top - offset.top
+	    };
+
+	    _super(item, container);
+	  },
+	  onDrag: function (item, position) {
+	    item.css({
+	      left: position.left - adjustment.left,
+	      top: position.top - adjustment.top
+	    });
+	  }
+	});
+}
+
+/**
+ * Refreshes the iFrame containing the live page of a month
+ */
 function WDEdtiorUpdateMonthLivePreview()
 {
-	console.log('test');
-
 	document.getElementById('live-preview').contentWindow.location.reload();
-
 }

@@ -1,9 +1,0 @@
-2019-01-26 21:35:21: -- Analysis Started by On File Change Incremental
-2019-01-26 21:35:21: Changes: 3, Conflicts: 0, CopyTime: 0, CopyState: 0/0, Errors: 0, All: 15
-2019-01-26 21:35:21: Left to Right: Copy File: 3 
-2019-01-26 21:35:21: == Sync Started by On File Change Incremental
-2019-01-26 21:35:22: Copy Over 'C:/wamp/www/Wynne's Diary/wynnes-diary-editor/diary.css' -> 'ftp://nlls4.a2hosting.com/wp-content/plugins/wynnes-diary-editor/diary.css'
-2019-01-26 21:35:22: Copy Over 'C:/wamp/www/Wynne's Diary/wynnes-diary-editor/diary.css.map' -> 'ftp://nlls4.a2hosting.com/wp-content/plugins/wynnes-diary-editor/diary.css.map'
-2019-01-26 21:35:22: Copy Over 'C:/wamp/www/Wynne's Diary/wynnes-diary-editor/scss/diary.scss' -> 'ftp://nlls4.a2hosting.com/wp-content/plugins/wynnes-diary-editor/scss/diary.scss'
-2019-01-26 21:35:23: == Sync Complete. Time: 00:00:02, Speed: 3.11 KB/s, OK: 3, Errors: 0
-2019-01-26 21:35:24: 

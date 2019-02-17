@@ -17,7 +17,6 @@ require 'inc/menu.php';
 require 'inc/assets.php';
 
 require 'inc/ajax-backend.php';
-//require 'inc/ajax-frontend.php';
 
 // Register the admin menu
 add_action( 'admin_menu', 'wdeditor_admin_menu' );
