@@ -17,8 +17,8 @@
 				</thead>
 				<tbody>
 					<?php foreach ($month_posts as $post): ?>
-						<tr>
-							<td><span class="dashicons dashicons-sort"></span></td>
+						<tr data-post="<?= $post->ID ?>">
+							<td><span class="dashicons dashicons-move"></span></td>
 							<td><?= $post->post_title ?></td>
 							<td>
 								<span class="edit"><a href=/wp-admin/post.php?post=<?= $post->ID ?>&action=edit">Edit</a> |</span>
