@@ -21,6 +21,9 @@ require 'inc/ajax-backend.php';
 // Register the admin menu
 add_action( 'admin_menu', 'wdeditor_admin_menu' );
 
+// Deregister default admin menus
+//add_action( 'admin_menu', 'wpeditor_remove_menus' );
+
 // Register 'diary.css' style
 add_action( 'admin_enqueue_scripts', 'wpeditor_load_style' );
 

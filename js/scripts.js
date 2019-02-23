@@ -1,5 +1,5 @@
 jQuery(document).ready(function($) {
-	jQuery('.init-wdeditor-ajax').click(function(event) {
+	jQuery('body').on('click', '.init-wdeditor-ajax', function(event) {
 		event.preventDefault();
 
 		var method = jQuery(this).attr('data-method');
@@ -15,11 +15,35 @@ jQuery(document).ready(function($) {
 			};
 		}
 
+		if(method == 'wdeditor_ajax_update_month_posts_order') {
+			var posts = {};
+
+			$('.wpeditor-posts tr').each(function() {
+				if($(this).attr('data-post')) {
+					var postID = $(this).attr('data-post');
+					var order = $(this).index();
+
+					posts[postID] = order;
+				}
+			});
+
+			var data = {
+				'action': method,
+				'posts': posts
+			};
+		}
+
 		// since 2.8 ajaxurl is always defined in the admin header and points to admin-ajax.php
 		jQuery.post(ajaxurl, data, function(response) {
 			alert(response);
 
 			WDEdtiorUpdateMonthLivePreview();
+
+			if(data.action == 'wdeditor_ajax_update_month_posts_order') {
+				jQuery('.update-posts-order-container').slideUp(function() {
+					jQuery(this).remove();
+				});
+			}
 		});
 	});
 
@@ -43,7 +67,7 @@ function WDEditorSortMonthPosts()
 
 	  		if(jQuery('.update-posts-order').length == 0) {
 	  			// Display button to update order in the database
-	  			jQuery('.wdeditor-sortable-posts').after('<div class="update-posts-order-container" style="display: none;"><a href="#" class="update-posts-order">Update Order</div>');
+	  			jQuery('.wdeditor-sortable-posts').after('<div class="update-posts-order-container" style="display: none;"><a href="#" class="init-wdeditor-ajax" data-method="wdeditor_ajax_update_month_posts_order">Update Order</div>');
 	  			jQuery('.update-posts-order-container').slideDown();
 	  		}
 	  	}

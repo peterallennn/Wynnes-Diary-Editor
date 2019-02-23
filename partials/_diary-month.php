@@ -19,7 +19,13 @@
 					<?php foreach ($month_posts as $post): ?>
 						<tr data-post="<?= $post->ID ?>">
 							<td><span class="dashicons dashicons-move"></span></td>
-							<td><?= $post->post_title ?></td>
+							<td>
+								<?php if(has_post_thumbnail($post->ID)) : ?>
+									<img src="<?= get_the_post_thumbnail_url($post->ID) ?>" height="20" class="post-image">
+								<?php endif; ?>
+
+								<?= $post->post_title ?>
+							</td>
 							<td>
 								<span class="edit"><a href=/wp-admin/post.php?post=<?= $post->ID ?>&action=edit">Edit</a> |</span>
 								<span class="trash"><a href="#" class="delete-post" data-id="<?= $post->ID ?>">Trash</a> |</span>
@@ -31,6 +37,8 @@
 			</table>
 
 			<div class="live-preview-container">
+				<a href="/the-diary#<?= $year->name . ',' . date('M', strtotime($month->name)) ?>" target="_BLANK">View Live <i>(opens in a new tab)</i></a>
+
 				<iframe src="/the-diary/?admin_preview#<?= $year->name . ',' . date('M', strtotime($month->name)) ?>" frameborder="0" class="live-preview" id="live-preview"></iframe>
 			</div>
 		</div>

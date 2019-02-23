@@ -29,7 +29,8 @@
 				$month = get_term_by('slug', $_GET['period'], 'category');
 			} 
 			
-			$month_posts = get_posts(['posts_per_page' => -1, 'category' => $month->term_id, 'orderby' => 'order']);
+			$month_posts = get_posts(['posts_per_page' => -1, 'category' => $month->term_id, 'orderby' => 'menu_order', 'order' => 'ASC']);
+			//print_r($month_posts);
 
 			include PLUGIN_DIR_PATH . '/partials/_diary-month.php';
 

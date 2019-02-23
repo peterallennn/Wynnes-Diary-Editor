@@ -17,3 +17,32 @@ function wdeditor_ajax_update_month_description() {
 
 	wp_die(); // this is required to terminate immediately and return a proper response
 }
+
+add_action( 'wp_ajax_wdeditor_ajax_update_month_posts_order', 'wdeditor_ajax_update_month_posts_order' );
+
+function wdeditor_ajax_update_month_posts_order() {
+	global $wpdb; // this is how you get access to the database
+
+	$posts = $_POST['posts'];
+	$error = false;
+
+	foreach ($posts as $id => $order) {
+
+		$update = wp_update_post([
+			'ID' => $id,
+			'menu_order' => $order
+		], true);
+
+		if(is_wp_error($update)) {
+			$error = true;
+		}
+	}
+
+	if(!$error) {
+		echo 'The order has been successfully updated.';
+	} else {
+		echo 'The server encountered an error in saving the order.';
+	}
+
+	wp_die(); // this is required to terminate immediately and return a proper response
+}
