@@ -48,6 +48,7 @@ jQuery(document).ready(function($) {
 	});
 
 	WDEditorSortMonthPosts();
+	WDEditorPostEditor();
 });
 
 /**
@@ -65,13 +66,23 @@ function WDEditorSortMonthPosts()
 	  		item.removeClass(container.group.options.draggedClass).removeAttr("style");
   			jQuery("body").removeClass(container.group.options.bodyClass);
 
-	  		if(jQuery('.update-posts-order').length == 0) {
+	  		if(jQuery('.update-posts-order-container').length == 0) {
 	  			// Display button to update order in the database
 	  			jQuery('.wdeditor-sortable-posts').after('<div class="update-posts-order-container" style="display: none;"><a href="#" class="init-wdeditor-ajax" data-method="wdeditor_ajax_update_month_posts_order">Update Order</div>');
 	  			jQuery('.update-posts-order-container').slideDown();
 	  		}
 	  	}
 	});
+}
+
+function WDEditorPostEditor()
+{
+	// When on the post.php admin page, set the Diary navigation item to active
+	var url = window.location.href;
+
+	if(url.indexOf('post.php') != -1 || url.indexOf('post-new.php')) {
+		jQuery('.toplevel_page_diary-editor').removeClass('wp-not-current-submenu').addClass('current')
+	}
 }
 
 /**

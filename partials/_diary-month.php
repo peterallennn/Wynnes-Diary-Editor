@@ -27,7 +27,7 @@
 								<?= $post->post_title ?>
 							</td>
 							<td>
-								<span class="edit"><a href=/wp-admin/post.php?post=<?= $post->ID ?>&action=edit">Edit</a> |</span>
+								<span class="edit"><a href="/wp-admin/post.php?post=<?= $post->ID ?>&action=edit">Edit</a> |</span>
 								<span class="trash"><a href="#" class="delete-post" data-id="<?= $post->ID ?>">Trash</a> |</span>
 								<span class="view"><a href="<?= get_permalink($post->ID) ?>">View Live</a></span>
 							</td>

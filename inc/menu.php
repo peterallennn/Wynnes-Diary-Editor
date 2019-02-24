@@ -12,10 +12,3 @@ function wdeditor_admin_menu()
 
   add_menu_page( $page_title, $menu_title, $capability, $menu_slug, $function, $icon_url, $position);
 }
-
-function wpeditor_remove_menus() 
-{
-	remove_menu_page( 'edit.php' );                   //Posts
-	remove_menu_page( 'edit-comments.php' );          //Comments
-	remove_menu_page( 'themes.php' );                 //Appearance
-}

@@ -1,18 +1,10 @@
 <?php
 	function wdeditor_diary_page()
 	{
-		// If month GET variable does not exist, display the main diary page with the years/months
-		if(!isset($_GET['period'])) {
-
-			$years = get_terms([
-				'taxonomy' => 'category',
-				'hide_empty' => false,
-				'exclude' => 1 // Exclude 'uncategorised'
-			]);
-			
-			include PLUGIN_DIR_PATH . '/partials/_diary.php';
-
-		} else { // If the month GET variable exists, display the month and it's posts
+		if(isset($_GET['period'])) {
+			/**
+			 * Display the 'diary-month' edit page 
+			 */
 
 			$period = explode('-', $_GET['period']);
 			$month_name = $period[0];
@@ -33,6 +25,33 @@
 			//print_r($month_posts);
 
 			include PLUGIN_DIR_PATH . '/partials/_diary-month.php';
+			return true;
 
 		}
+
+		if(isset($_GET['action']) && $_GET['action'] == 'new-post' || isset($_GET['action']) && $_GET['action'] == 'edit-post') {
+			/**
+			 * Display the 'diary-post' edit page
+			 */
+			$editing = false;
+
+			if(isset($_GET['post'])) {
+				$post = get_post($_GET['post']);
+				$editing = true;
+			}
+
+			include PLUGIN_DIR_PATH . '/partials/_diary-post.php';
+			return true;
+		}
+
+		/**
+		 * Otherwise, display the diary page with a grid of all years
+		 */
+		$years = get_terms([
+			'taxonomy' => 'category',
+			'hide_empty' => false,
+			'exclude' => 1 // Exclude 'uncategorised'
+		]);
+		
+		include PLUGIN_DIR_PATH . '/partials/_diary.php';
 	}
