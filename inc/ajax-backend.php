@@ -46,3 +46,27 @@ function wdeditor_ajax_update_month_posts_order() {
 
 	wp_die(); // this is required to terminate immediately and return a proper response
 }
+
+add_action( 'wp_ajax_wdeditor_ajax_add_year', 'wdeditor_ajax_add_year' );
+
+function wdeditor_ajax_add_year() {
+	global $wpdb; // this is how you get access to the database
+
+	$year = $_POST['year'];
+
+	$year_exists = term_exists($year, 'category');
+
+	if($year_exists) {
+		echo 'The year already exists.';
+	} else {
+		$add_year = wp_insert_term($year, 'category');	
+
+		if($add_year === false) {
+			echo 'The server encountered an error.';
+		} else {
+			echo 'The year has been added.';
+		}
+	}
+
+	wp_die(); // this is required to terminate immediately and return a proper response
+}

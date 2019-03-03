@@ -1,5 +1,6 @@
 <div class="diary-month-editor wrap">
 	<div class="heading">
+		<a href="/wp-admin/admin.php?page=diary-editor&focus=<?= $year->name ?>" class="wdeditor-back-to-link">Back to Diary</a>
 		<h1 class="wp-heading-inline"><?= $month->name; ?>, <?= $year->name; ?></h1>
 		<a href="/wp-admin/post-new.php?period=<?= $_GET['period'] ?>" class="page-title-action">Add New Post to <?= $month->name; ?>, <?= $year->name; ?></a>
 		<hr class="wp-header-end">

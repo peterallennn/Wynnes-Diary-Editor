@@ -33,22 +33,44 @@ jQuery(document).ready(function($) {
 			};
 		}
 
+		if(method == 'wdeditor_ajax_add_year') {
+			var year = jQuery('input[name="year"]').val();
+
+			var data = {
+				'action': method,
+				'year': year
+			}
+		}
+
 		// since 2.8 ajaxurl is always defined in the admin header and points to admin-ajax.php
 		jQuery.post(ajaxurl, data, function(response) {
-			alert(response);
+			if(data.action == 'wdeditor_ajax_add_year' && response == 'The year has been added.') {
+				window.location.href = window.location.href + '&focus=' + data.year;
+			}			
 
-			WDEdtiorUpdateMonthLivePreview();
+			if(data.action == 'wdeditor_ajax_update_month_posts_order' || data.action == 'wdeditor_ajax_update_month_description') {
+				WDEdtiorUpdateMonthLivePreview();
+			}
 
 			if(data.action == 'wdeditor_ajax_update_month_posts_order') {
 				jQuery('.update-posts-order-container').slideUp(function() {
 					jQuery(this).remove();
 				});
 			}
+
+			alert(response);
 		});
 	});
 
+	// Move 'back' link within post.php to the correct location within the DOM. 
+	// See 'inc/post-editor.php' for more details on this bodged solution to a problem
+	if(jQuery('.wdeditor-post-editor-back-link').length == 1) {
+		jQuery('.wdeditor-post-editor-back-link').prependTo('.wrap').slideDown();
+	}
+
 	WDEditorSortMonthPosts();
 	WDEditorPostEditor();
+	WDEditorDiaryFocus();
 });
 
 /**
@@ -91,4 +113,34 @@ function WDEditorPostEditor()
 function WDEdtiorUpdateMonthLivePreview()
 {
 	document.getElementById('live-preview').contentWindow.location.reload();
+}
+
+function WDEditorDiaryFocus()
+{
+	var url = new URL(document.location.href);
+	var searchParams = new URLSearchParams(url.search);
+
+	if(searchParams.get('focus')) {
+		var focus = searchParams.get('focus');
+
+		jQuery([document.documentElement, document.body]).animate({
+	        scrollTop: (jQuery('div[data-year="' + focus + '"]').offset().top - 50)
+	    }, 2000);
+
+	    setTimeout(function() {
+	    	jQuery('div[data-year="' + focus + '"]').addClass('focus');
+
+	    	// Remove focus param from url
+			var currentURL = document.location.href;
+			var newURL = currentURL.replace('&focus=' + focus, '');
+			history.replaceState({}, null, newURL);
+
+	    	setTimeout(function() {
+	    		jQuery('div[data-year="' + focus + '"]').removeClass('focus');
+
+	    		
+	    	}, 5000);
+	    }, 1500);
+	}
+	
 }

@@ -8,14 +8,19 @@
 		width: 22%;
 		float: left;
 		margin: 20px;
-		transition: all 250ms ease;
+		transition: all 350ms ease;
 		transform: scale(1);
 		position: relative;
+		box-sizing: border-box;
+	    -moz-box-sizing: border-box;
+	    -webkit-box-sizing: border-box;
 
-		&:hover {
+		&:hover,
+		&.focus {
 			transform: scale(1.05);
-			transition: all 250ms ease;
+			transition: all 350ms ease;
 			z-index: 2;
+		    box-shadow: inset 0px 0px 0px 3px #0073aa;
 		}
 
 		h3 {
@@ -24,6 +29,17 @@
 			background: rgba(0, 0, 0, .2);
 			padding: 15px;
 			line-height: 1;
+
+			.delete-year {
+				float: right;
+				text-decoration: none;
+				color: #23282d;
+				opacity: .6;
+
+				&:hover {
+					opacity: 1;
+				}
+			}
 		}
 
 		.months {
@@ -110,5 +126,38 @@
 		.wp-editor-wrap {
 			margin-bottom: 10px;
 		}
+	}
+}
+
+.wdeditor-back-to-link {
+	display: block;
+	margin: 0 0px -5px 0;
+	position: relative;
+	left: 1px;
+}
+
+body.post-php,
+body.post-new-php {
+
+	.imgevr-get-premium {
+		display: none;
+	}
+
+	#formatdiv {
+		display: none;
+	}
+
+	#commentsdiv {
+		display: none;
+	}
+
+	/* Hide the default timestamp field */
+	.misc-pub-curtime {
+		display: none;
+	}
+
+	/* Hide the default category selector */
+	#categorydiv {
+		display: none;
 	}
 }

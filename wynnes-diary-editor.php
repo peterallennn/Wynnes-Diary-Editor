@@ -15,8 +15,14 @@ define('CURRENT_ADMIN_URL', $current_url = "//" . $_SERVER['HTTP_HOST'] . $_SERV
 require 'inc/pages.php';
 require 'inc/menu.php';
 require 'inc/assets.php';
+require 'inc/post-editor.php';
 
 require 'inc/ajax-backend.php';
+
+/**
+ * Add modification to 'posts-new.php' form
+ */
+require 'inc/posts-form.php';
 
 // Register the admin menu
 add_action( 'admin_menu', 'wdeditor_admin_menu' );
@@ -26,3 +32,4 @@ add_action( 'admin_enqueue_scripts', 'wpeditor_load_style' );
 
 // Register 'scripts.js' script
 add_action( 'admin_enqueue_scripts', 'wdedtior_load_scripts' );
+

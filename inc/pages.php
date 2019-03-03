@@ -52,6 +52,8 @@
 			'hide_empty' => false,
 			'exclude' => 1 // Exclude 'uncategorised'
 		]);
+
+		add_thickbox();
 		
 		include PLUGIN_DIR_PATH . '/partials/_diary.php';
 	}
