@@ -24,7 +24,7 @@
 			?>
 			<?php if(!$year->parent) : // Exclude month sub categories ?>
 				<div class="diary-year display-year-months" data-year="<?= $year->name ?>">
-					<h3><?= $year->name ?> <a href="#" class="delete-year" data-year="<?= $year->id ?>" onclick="return confirm('Are you sure you want to delete the year of <?= $year->name ?>? Doing so will also delete the month and posts within if any have been created.')"><span class="dashicons dashicons-no"></span></a></h3>
+					<h3><?= $year->name ?> <a href="#" class="delete-year init-wdeditor-ajax" data-method="wdeditor_ajax_delete_year" data-year="<?= $year->term_id ?>" data-confirm="Are you sure you want to delete the year of <?= $year->name ?>? Doing so will also delete the month and posts within if any have been created."><span class="dashicons dashicons-no"></span></a></h3>
 				
 					<ul class="months">
 						<?php foreach ($months as $month): ?>

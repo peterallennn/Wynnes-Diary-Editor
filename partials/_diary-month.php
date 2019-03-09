@@ -29,7 +29,7 @@
 							</td>
 							<td>
 								<span class="edit"><a href="/wp-admin/post.php?post=<?= $post->ID ?>&action=edit">Edit</a> |</span>
-								<span class="trash"><a href="#" class="delete-post" data-id="<?= $post->ID ?>">Trash</a> |</span>
+								<span class="trash"><a href="#" class="delete-post init-wdeditor-ajax" data-method="wdeditor_ajax_delete_post" data-post="<?= $post->ID ?>" data-confirm="Are you sure you want to delete <?= $post->post_title ?>?">Delete</a> |</span>
 								<span class="view"><a href="<?= get_permalink($post->ID) ?>">View Live</a></span>
 							</td>
 						</tr>

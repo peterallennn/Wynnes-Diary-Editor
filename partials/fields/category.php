@@ -1,7 +1,7 @@
 <div class="date-select-fields">
 	<ul>
 		<li>
-			<input type="number" name="post_year" value="<?= $post_year ?>" min="1879" max="1931">
+			<input type="number" name="post_year" value="<?= $post_year ?>">
 		</li>
 		<li>
 			<select name="post_month">

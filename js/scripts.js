@@ -2,11 +2,21 @@ jQuery(document).ready(function($) {
 	jQuery('body').on('click', '.init-wdeditor-ajax', function(event) {
 		event.preventDefault();
 
-		var method = jQuery(this).attr('data-method');
+		var anchor = jQuery(this);
+		var method = anchor.attr('data-method');
+
+		if(anchor.attr('data-confirm')) {
+			var confirmText = anchor.attr('data-confirm');
+			var confirmed = confirm(confirmText);
+
+			if(!confirmed) {
+				return false;
+			}
+		}
 
 		if(method == 'wdeditor_ajax_update_month_description') {
 			var description = tinymce.editors['category-description-editor'].getContent();
-			var monthID = jQuery(this).attr('data-month');
+			var monthID = anchor.attr('data-month');
 
 			var data = {
 				'action': method,
@@ -42,8 +52,28 @@ jQuery(document).ready(function($) {
 			}
 		}
 
+		if(method == 'wdeditor_ajax_delete_year') {
+			var year = anchor.attr('data-year');
+
+			var data = {
+				'action': method,
+				'year': year
+			}
+		}
+
+		if(method == 'wdeditor_ajax_delete_post') {
+			var post = anchor.attr('data-post');
+
+			var data = {
+				'action': method,
+				'post': post
+			}
+		}
+
 		// since 2.8 ajaxurl is always defined in the admin header and points to admin-ajax.php
 		jQuery.post(ajaxurl, data, function(response) {
+			alert(response);
+
 			if(data.action == 'wdeditor_ajax_add_year' && response == 'The year has been added.') {
 				window.location.href = window.location.href + '&focus=' + data.year;
 			}			
@@ -54,11 +84,21 @@ jQuery(document).ready(function($) {
 
 			if(data.action == 'wdeditor_ajax_update_month_posts_order') {
 				jQuery('.update-posts-order-container').slideUp(function() {
-					jQuery(this).remove();
+					anchor.remove();
 				});
 			}
 
-			alert(response);
+			if(data.action == 'wdeditor_ajax_delete_year') {
+				anchor.closest('.diary-year').fadeOut(function() {
+					$(this).remove();
+				});
+			}
+
+			if(data.action == 'wdeditor_ajax_delete_post') {
+				anchor.closest('tr').slideUp(function() {
+					$(this).remove();
+				});
+			}
 		});
 	});
 
