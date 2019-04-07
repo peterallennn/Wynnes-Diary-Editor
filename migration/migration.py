@@ -25,7 +25,7 @@ def strip_tags(html):
 	# Create an instance of BeautifulSoup
 	html = read_html(html, False)
 
-	invalid_tags = ['font', 'tr', 'td', 'i', 'table', 'br', 'b', 'div']
+	invalid_tags = ['font', 'tr', 'td', 'i', 'table', 'br', 'b', 'div', 'strong']
 
 	for tag in invalid_tags:
 		for match in html.findAll(tag):
@@ -36,15 +36,15 @@ def strip_tags(html):
 	return html
 
 def move_media(old_file, old_dir, new_dir):
-	file_src = str(old_file['src'])
+	if type(old_file) is not str:
+		file_src = str(old_file['src'])
+	else:
+		file_src = old_file
 
 	old_file_path = str(os.path.abspath(old_dir + file_src)).replace('\\', '/').replace('%20', ' ')
 
-	print(old_file_path)
-	print(file_src)
-
 	file_name = Path(old_file_path).name
-	
+
 	if '../' in file_src:
 		# The absolute positioning suggests a generic file that is used across the website
 		file_src = file_src.replace('../', '').replace('%20', ' ')
@@ -62,12 +62,19 @@ def move_media(old_file, old_dir, new_dir):
 	# Copy the image into our media folder
 	shutil.copyfile(old_file_path, new_file_path)
 
-	return new_file_path
+	new_url = new_file_path.replace(MEDIA_DIR, WEB_DIR)
+
+	return {
+		'new_path': new_file_path,
+		'new_url': new_url
+	}
 
 OLD = 'C:/wamp64/www/Wynne\'s Diary/Old Wynne\'s Diary/'
-MEDIA_DIR = os.path.dirname(os.path.abspath(__file__)) + '/media'
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MEDIA_DIR = BASE_DIR + '/media'
+WEB_DIR = '//wynnesdiary.com/wp-content/uploads/migration'
 #MONTHS = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december']
-MONTHS = ['december']
+MONTHS = ['may']
 
 # We will store the relevant data in this dict variable
 data = {}
@@ -77,7 +84,7 @@ for file in os.listdir(OLD):
 	# Find all year directories with naming convention of "{year}_pages", these are the directories that will need to be migrated
 	## Store the year in the JSON 
 	#if file.endswith('_pages') and 'section' not in file and 'blurb' not in file and '.' not in file:
-	if '1895' in file:
+	if '1911' in file:
 		year = file.split('_')[0]
 		year_dir = OLD + year + '_pages'
 		data[year] = {}
@@ -124,11 +131,27 @@ for file in os.listdir(OLD):
 									img_src = viewer_cleaned.find('img')
 									new_img_path = move_media(img_src, old_file_dir, new_file_dir)
 
-									viewer_dict['featured_image'] = new_img_path
+									viewer_dict['featured_image'] = new_img_path['new_url']
+									viewer_dict['title'] = 'Viewer ' + str(v) # Just set a default title for the moment
 								else:
 									# Get the post title
-									post_title = viewer.select('td > p')[1].get_text(strip=True)
+									title = viewer.select('td > p')
+									
+									for paragraph in title:
+										if str(paragraph) != '<p> </p>':
+											# Skip all of the empty paragraph tags
+											# The first instance of no empty tags will be the post title.
+											post_title = strip_tags(paragraph)
+
+											break;
+
+									print()
+
 									viewer_dict['title'] = str(post_title)
+									print(viewer_dict['title'])
+
+									#print(viewer.select('td > p'))
+									print('!' * 20)
 
 									# Store the excerpt data
 									viewer_dict['excerpt'] = str(viewer_cleaned)
@@ -143,7 +166,25 @@ for file in os.listdir(OLD):
 								# Get all the images within the description
 								for img in description.findAll('img'):
 									new_img_path = move_media(img, old_file_dir, new_file_dir)
-									print('!' * 20)
+									img['src'] = new_img_path['new_url']
+
+								# Find the anchor tag
+								# There are some instances where there is a hover effect applied to an image using MM_swapImg.
+								# This contains an image within the function that also needs to be copied across. 
+								for anchor in description.findAll('a', {'onmouseout': 'MM_swapImgRestore()'}):
+									print(anchor['onmouseover'])
+									# Example: <a href="viewer_3.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image3','','Brookfield_mod2_ext.jpg',1)">
+									anchor_mouseover = anchor['onmouseover'].split("'','")
+									anchor_mouseover_img = str(anchor_mouseover[1]).split("'")
+									img = anchor_mouseover_img[0]
+									
+									new_image_path = move_media(img, old_file_dir, new_file_dir)
+
+									# Now update the attribute within the anchor
+									anchor_mouseover_img[0] = new_image_path['new_url']
+									anchor_mouseover[1] = anchor_mouseover_img[0] + '\'' + anchor_mouseover_img[1]
+
+									anchor['onmouseover'] = "'','".join(anchor_mouseover)
 
 								# Get the audio and convert from flash to HTML5
 								
