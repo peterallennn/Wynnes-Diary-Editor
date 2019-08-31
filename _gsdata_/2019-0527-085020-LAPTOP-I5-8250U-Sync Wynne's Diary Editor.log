@@ -1,0 +1,10 @@
+2019-05-27 08:50:20: On File Change Monitoring started on file:///C:/wamp64/www/Wynne's Diary/Local WP/wp-content/plugins/wynnes-diary-editor
+2019-05-27 08:50:21: File Monitoring not available on: ftps://nlls4.a2hosting.com/wp-content/plugins/wynnes-diary-editor
+2019-05-27 08:50:21: Remote File System with No monitoring, disconnect
+2019-05-27 08:50:21: -- Analysis Started by On File Change First Full Analyze Upon File Monitoring Start
+2019-05-27 08:50:23: Changes: 1, Conflicts: 0, CopyTime: 0, FixState: 0, Errors: 0, All: 40
+2019-05-27 08:50:23: Left to Right: Copy File: 1 
+2019-05-27 08:50:23: == Sync Started by On File Change First Full Analyze Upon File Monitoring Start
+2019-05-27 08:50:23: Copy Over 'C:/wamp64/www/Wynne's Diary/Local WP/wp-content/plugins/wynnes-diary-editor/prepros-6.config' -> 'ftps://nlls4.a2hosting.com:21/wp-content/plugins/wynnes-diary-editor/prepros-6.config' (6,219)
+2019-05-27 08:50:24: == Sync Complete. Time: 00:00:01, Speed: 0 bytes/s, OK: 1, Errors: 0
+2019-05-27 08:50:24: 

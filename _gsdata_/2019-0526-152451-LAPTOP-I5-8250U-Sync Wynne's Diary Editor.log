@@ -1,0 +1,7 @@
+2019-05-26 15:24:52: -- Analysis Started by On File Change Incremental
+2019-05-26 15:24:53: Changes: 1, Conflicts: 0, CopyTime: 0, FixState: 0, Errors: 0, All: 40
+2019-05-26 15:24:53: Left to Right: Copy File: 1 
+2019-05-26 15:24:53: == Sync Started by On File Change Incremental
+2019-05-26 15:24:53: Copy Over 'C:/wamp64/www/Wynne's Diary/Local WP/wp-content/plugins/wynnes-diary-editor/inc/pages.php' -> 'ftps://nlls4.a2hosting.com:21/wp-content/plugins/wynnes-diary-editor/inc/pages.php' (2,038)
+2019-05-26 15:24:53: == Sync Complete. Time: 00:00:00, Speed: 0 bytes/s, OK: 1, Errors: 0
+2019-05-26 15:24:54: 

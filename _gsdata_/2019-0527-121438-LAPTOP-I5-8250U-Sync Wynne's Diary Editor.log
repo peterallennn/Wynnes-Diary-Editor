@@ -1,0 +1,9 @@
+2019-05-27 12:14:40: -- Analysis Started by On File Change Incremental
+2019-05-27 12:14:40: Changes: 3, Conflicts: 0, CopyTime: 0, FixState: 0, Errors: 0, All: 40
+2019-05-27 12:14:40: Left to Right: Copy File: 3 
+2019-05-27 12:14:40: == Sync Started by On File Change Incremental
+2019-05-27 12:14:41: Copy Over 'C:/wamp64/www/Wynne's Diary/Local WP/wp-content/plugins/wynnes-diary-editor/diary.css' -> 'ftps://nlls4.a2hosting.com:21/wp-content/plugins/wynnes-diary-editor/diary.css' (60,210)
+2019-05-27 12:14:41: Copy Over 'C:/wamp64/www/Wynne's Diary/Local WP/wp-content/plugins/wynnes-diary-editor/diary.css.map' -> 'ftps://nlls4.a2hosting.com:21/wp-content/plugins/wynnes-diary-editor/diary.css.map' (31,485)
+2019-05-27 12:14:41: Copy Over 'C:/wamp64/www/Wynne's Diary/Local WP/wp-content/plugins/wynnes-diary-editor/scss/diary.scss' -> 'ftps://nlls4.a2hosting.com:21/wp-content/plugins/wynnes-diary-editor/scss/diary.scss' (2,791)
+2019-05-27 12:14:42: == Sync Complete. Time: 00:00:02, Speed: 92.2 KB/s, OK: 3, Errors: 0
+2019-05-27 12:14:42: 

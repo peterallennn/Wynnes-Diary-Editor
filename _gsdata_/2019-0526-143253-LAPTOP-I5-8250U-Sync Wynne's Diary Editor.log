@@ -1,0 +1,9 @@
+2019-05-26 14:32:54: -- Analysis Started by User Command
+2019-05-26 14:32:56: Changes: 1, Conflicts: 0, CopyTime: 0, FixState: 0, Errors: 0, All: 40
+2019-05-26 14:32:56: Left to Right: Copy File: 1 
+2019-05-26 14:32:56: -- Analysis Complete. Time 00:00:03, Speed: 12 files/s
+2019-05-26 14:32:56: 
+2019-05-26 14:32:57: == Sync Started by User Command
+2019-05-26 14:32:58: Copy Over 'C:/wamp64/www/Wynne's Diary/Local WP/wp-content/plugins/wynnes-diary-editor/partials/_diary.php' -> 'ftps://nlls4.a2hosting.com:21/wp-content/plugins/wynnes-diary-editor/partials/_diary.php' (2,885)
+2019-05-26 14:32:59: == Sync Complete. Time: 00:00:02, Speed: 2.81 KB/s, OK: 1, Errors: 0
+2019-05-26 14:32:59: 

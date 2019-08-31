@@ -1,0 +1,56 @@
+2019-05-26 14:28:18: -- Analysis Started by User Command
+2019-05-26 14:28:20: Changes: 25, Conflicts: 0, CopyTime: 0, FixState: 2, Errors: 0, All: 40
+2019-05-26 14:28:20: Left to Right: Copy File: 25 
+2019-05-26 14:28:20: -- Analysis Complete. Time 00:00:03, Speed: 12 files/s
+2019-05-26 14:28:20: 
+2019-05-26 14:28:23: == Sync Started by User Command
+2019-05-26 14:28:23: Copy Over 'C:/wamp64/www/Wynne's Diary/Local WP/wp-content/plugins/wynnes-diary-editor/.gitignore' -> 'ftps://nlls4.a2hosting.com:21/wp-content/plugins/wynnes-diary-editor/.gitignore' (28)
+2019-05-26 14:28:24: Copy Over 'C:/wamp64/www/Wynne's Diary/Local WP/wp-content/plugins/wynnes-diary-editor/css/_bootstrap-grid.css' -> 'ftps://nlls4.a2hosting.com:21/wp-content/plugins/wynnes-diary-editor/css/_bootstrap-grid.css' (75,893)
+2019-05-26 14:28:24: Copy Over 'C:/wamp64/www/Wynne's Diary/Local WP/wp-content/plugins/wynnes-diary-editor/diary.css' -> 'ftps://nlls4.a2hosting.com:21/wp-content/plugins/wynnes-diary-editor/diary.css' (59,760)
+2019-05-26 14:28:24: Copy Over 'C:/wamp64/www/Wynne's Diary/Local WP/wp-content/plugins/wynnes-diary-editor/diary.css.map' -> 'ftps://nlls4.a2hosting.com:21/wp-content/plugins/wynnes-diary-editor/diary.css.map' (31,317)
+2019-05-26 14:28:24: Copy Over 'C:/wamp64/www/Wynne's Diary/Local WP/wp-content/plugins/wynnes-diary-editor/inc/ajax-backend.php' -> 'ftps://nlls4.a2hosting.com:21/wp-content/plugins/wynnes-diary-editor/inc/ajax-backend.php' (4,431)
+2019-05-26 14:28:25: Copy Over 'C:/wamp64/www/Wynne's Diary/Local WP/wp-content/plugins/wynnes-diary-editor/inc/assets.php' -> 'ftps://nlls4.a2hosting.com:21/wp-content/plugins/wynnes-diary-editor/inc/assets.php' (493)
+2019-05-26 14:28:25: Copy Over 'C:/wamp64/www/Wynne's Diary/Local WP/wp-content/plugins/wynnes-diary-editor/inc/custom-post-types/image-mouseovers.php' -> 'ftps://nlls4.a2hosting.com:21/wp-content/plugins/wynnes-diary-editor/inc/custom-post-types/image-mouseovers.php' (3,656)
+2019-05-26 14:28:25: Copy Over 'C:/wamp64/www/Wynne's Diary/Local WP/wp-content/plugins/wynnes-diary-editor/inc/helpers.php' -> 'ftps://nlls4.a2hosting.com:21/wp-content/plugins/wynnes-diary-editor/inc/helpers.php' (1,316)
+2019-05-26 14:28:26: Copy Over 'C:/wamp64/www/Wynne's Diary/Local WP/wp-content/plugins/wynnes-diary-editor/inc/menu.php' -> 'ftps://nlls4.a2hosting.com:21/wp-content/plugins/wynnes-diary-editor/inc/menu.php' (391)
+2019-05-26 14:28:26: Copy Over 'C:/wamp64/www/Wynne's Diary/Local WP/wp-content/plugins/wynnes-diary-editor/inc/pages.php' -> 'ftps://nlls4.a2hosting.com:21/wp-content/plugins/wynnes-diary-editor/inc/pages.php' (2,068)
+2019-05-26 14:28:26: Copy Over 'C:/wamp64/www/Wynne's Diary/Local WP/wp-content/plugins/wynnes-diary-editor/inc/post-editor.php' -> 'ftps://nlls4.a2hosting.com:21/wp-content/plugins/wynnes-diary-editor/inc/post-editor.php' (2,377)
+2019-05-26 14:28:26: Copy Over 'C:/wamp64/www/Wynne's Diary/Local WP/wp-content/plugins/wynnes-diary-editor/inc/posts-form.php' -> 'ftps://nlls4.a2hosting.com:21/wp-content/plugins/wynnes-diary-editor/inc/posts-form.php' (4,983)
+2019-05-26 14:28:27: Copy Over 'C:/wamp64/www/Wynne's Diary/Local WP/wp-content/plugins/wynnes-diary-editor/js/plugins.js' -> 'ftps://nlls4.a2hosting.com:21/wp-content/plugins/wynnes-diary-editor/js/plugins.js' (9,911)
+2019-05-26 14:28:27: Copy Over 'C:/wamp64/www/Wynne's Diary/Local WP/wp-content/plugins/wynnes-diary-editor/js/scripts.js' -> 'ftps://nlls4.a2hosting.com:21/wp-content/plugins/wynnes-diary-editor/js/scripts.js' (6,502)
+2019-05-26 14:28:29: Copy Over 'C:/wamp64/www/Wynne's Diary/Local WP/wp-content/plugins/wynnes-diary-editor/migration/data.json' -> 'ftps://nlls4.a2hosting.com:21/wp-content/plugins/wynnes-diary-editor/migration/data.json' (2,423,441)
+2019-05-26 14:28:29: Copy Over 'C:/wamp64/www/Wynne's Diary/Local WP/wp-content/plugins/wynnes-diary-editor/migration/migration.py' -> 'ftps://nlls4.a2hosting.com:21/wp-content/plugins/wynnes-diary-editor/migration/migration.py' (14,106)
+2019-05-26 14:28:29: Copy Over 'C:/wamp64/www/Wynne's Diary/Local WP/wp-content/plugins/wynnes-diary-editor/migration/wordpress-json-import.php' -> 'ftps://nlls4.a2hosting.com:21/wp-content/plugins/wynnes-diary-editor/migration/wordpress-json-import.php' (2,984)
+2019-05-26 14:28:29: Copy Over 'C:/wamp64/www/Wynne's Diary/Local WP/wp-content/plugins/wynnes-diary-editor/partials/_diary-month.php' -> 'ftps://nlls4.a2hosting.com:21/wp-content/plugins/wynnes-diary-editor/partials/_diary-month.php' (3,370)
+2019-05-26 14:28:30: Copy Over 'C:/wamp64/www/Wynne's Diary/Local WP/wp-content/plugins/wynnes-diary-editor/partials/_diary.php' -> 'ftps://nlls4.a2hosting.com:21/wp-content/plugins/wynnes-diary-editor/partials/_diary.php' (2,745)
+2019-05-26 14:28:30: Copy Over 'C:/wamp64/www/Wynne's Diary/Local WP/wp-content/plugins/wynnes-diary-editor/partials/fields/category.php' -> 'ftps://nlls4.a2hosting.com:21/wp-content/plugins/wynnes-diary-editor/partials/fields/category.php' (662)
+2019-05-26 14:28:30: Copy Over 'C:/wamp64/www/Wynne's Diary/Local WP/wp-content/plugins/wynnes-diary-editor/prepros-6.config' -> 'ftps://nlls4.a2hosting.com:21/wp-content/plugins/wynnes-diary-editor/prepros-6.config' (6,219)
+2019-05-26 14:28:30: Copy Over 'C:/wamp64/www/Wynne's Diary/Local WP/wp-content/plugins/wynnes-diary-editor/scss/_bootstrap-grid.scss' -> 'ftps://nlls4.a2hosting.com:21/wp-content/plugins/wynnes-diary-editor/scss/_bootstrap-grid.scss' (68,266)
+2019-05-26 14:28:31: Copy Over 'C:/wamp64/www/Wynne's Diary/Local WP/wp-content/plugins/wynnes-diary-editor/scss/_sortable.scss' -> 'ftps://nlls4.a2hosting.com:21/wp-content/plugins/wynnes-diary-editor/scss/_sortable.scss' (634)
+2019-05-26 14:28:31: Copy Over 'C:/wamp64/www/Wynne's Diary/Local WP/wp-content/plugins/wynnes-diary-editor/scss/diary.scss' -> 'ftps://nlls4.a2hosting.com:21/wp-content/plugins/wynnes-diary-editor/scss/diary.scss' (2,421)
+2019-05-26 14:28:31: Copy Over 'C:/wamp64/www/Wynne's Diary/Local WP/wp-content/plugins/wynnes-diary-editor/wynnes-diary-editor.php' -> 'ftps://nlls4.a2hosting.com:21/wp-content/plugins/wynnes-diary-editor/wynnes-diary-editor.php' (1,327)
+2019-05-26 14:28:31: Deleted Recycled: C:/wamp64/www/Wynne's Diary/Local WP/wp-content/plugins/wynnes-diary-editor/_gsdata_/_saved_/inc/assets.php
+2019-05-26 14:28:31: Deleted Recycled: C:/wamp64/www/Wynne's Diary/Local WP/wp-content/plugins/wynnes-diary-editor/_gsdata_/_saved_/wynnes-diary-editor.php
+2019-05-26 14:28:31: Deleted Recycled: C:/wamp64/www/Wynne's Diary/Local WP/wp-content/plugins/wynnes-diary-editor/_gsdata_/_saved_/scss/_sortable.scss
+2019-05-26 14:28:31: Deleted Recycled: C:/wamp64/www/Wynne's Diary/Local WP/wp-content/plugins/wynnes-diary-editor/_gsdata_/_saved_/inc/menu.php
+2019-05-26 14:28:31: Deleted Recycled: C:/wamp64/www/Wynne's Diary/Local WP/wp-content/plugins/wynnes-diary-editor/_gsdata_/_saved_/js/scripts.js
+2019-05-26 14:28:31: Deleted Recycled: C:/wamp64/www/Wynne's Diary/Local WP/wp-content/plugins/wynnes-diary-editor/_gsdata_/_saved_/partials/_diary-post.php
+2019-05-26 14:28:31: Deleted Recycled: C:/wamp64/www/Wynne's Diary/Local WP/wp-content/plugins/wynnes-diary-editor/_gsdata_/_saved_/inc/pages.php
+2019-05-26 14:28:31: Deleted Recycled: C:/wamp64/www/Wynne's Diary/Local WP/wp-content/plugins/wynnes-diary-editor/_gsdata_/_saved_/inc/helpers.php
+2019-05-26 14:28:31: Deleted Recycled: C:/wamp64/www/Wynne's Diary/Local WP/wp-content/plugins/wynnes-diary-editor/_gsdata_/_saved_/diary.css
+2019-05-26 14:28:31: Deleted Recycled: C:/wamp64/www/Wynne's Diary/Local WP/wp-content/plugins/wynnes-diary-editor/_gsdata_/_saved_/partials/fields/category.php
+2019-05-26 14:28:31: Deleted Recycled: C:/wamp64/www/Wynne's Diary/Local WP/wp-content/plugins/wynnes-diary-editor/_gsdata_/_saved_/js/plugins.js
+2019-05-26 14:28:31: Deleted Recycled: C:/wamp64/www/Wynne's Diary/Local WP/wp-content/plugins/wynnes-diary-editor/_gsdata_/_saved_/diary.css.map
+2019-05-26 14:28:31: Deleted Recycled: C:/wamp64/www/Wynne's Diary/Local WP/wp-content/plugins/wynnes-diary-editor/_gsdata_/_saved_/scss/diary.scss
+2019-05-26 14:28:31: Deleted Recycled: C:/wamp64/www/Wynne's Diary/Local WP/wp-content/plugins/wynnes-diary-editor/_gsdata_/_saved_/partials/_diary.php
+2019-05-26 14:28:31: Deleted Recycled: C:/wamp64/www/Wynne's Diary/Local WP/wp-content/plugins/wynnes-diary-editor/_gsdata_/_saved_/inc/posts-form.php
+2019-05-26 14:28:31: Deleted Recycled: C:/wamp64/www/Wynne's Diary/Local WP/wp-content/plugins/wynnes-diary-editor/_gsdata_/_saved_/css/_bootstrap-grid.css
+2019-05-26 14:28:31: Deleted Recycled: C:/wamp64/www/Wynne's Diary/Local WP/wp-content/plugins/wynnes-diary-editor/_gsdata_/_saved_/partials/_diary-month.php
+2019-05-26 14:28:31: Deleted Recycled: C:/wamp64/www/Wynne's Diary/Local WP/wp-content/plugins/wynnes-diary-editor/_gsdata_/_saved_/prepros-6.config
+2019-05-26 14:28:31: Deleted Recycled: C:/wamp64/www/Wynne's Diary/Local WP/wp-content/plugins/wynnes-diary-editor/_gsdata_/_saved_/inc/ajax-frontend.php
+2019-05-26 14:28:31: Deleted Recycled: C:/wamp64/www/Wynne's Diary/Local WP/wp-content/plugins/wynnes-diary-editor/_gsdata_/_saved_/inc/ajax.php
+2019-05-26 14:28:31: Deleted Recycled: C:/wamp64/www/Wynne's Diary/Local WP/wp-content/plugins/wynnes-diary-editor/_gsdata_/_saved_/inc/ajax-backend.php
+2019-05-26 14:28:31: Deleted Recycled: C:/wamp64/www/Wynne's Diary/Local WP/wp-content/plugins/wynnes-diary-editor/_gsdata_/_saved_/scss/_bootstrap-grid.scss
+2019-05-26 14:28:31: Deleted Recycled: C:/wamp64/www/Wynne's Diary/Local WP/wp-content/plugins/wynnes-diary-editor/_gsdata_/_saved_/inc/post-editor.php
+2019-05-26 14:28:33: == Sync Complete. Time: 00:00:11, Speed: 309 KB/s, OK: 27, Errors: 0
+2019-05-26 14:28:33: 

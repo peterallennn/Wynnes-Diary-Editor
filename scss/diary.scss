@@ -1,6 +1,18 @@
 @import 'bootstrap-grid';
 @import 'sortable';
 
+#wp-admin-bar-new-content {
+	display: none !important;
+}
+
+#wp-admin-bar-comments {
+	display: none !important;
+}
+
+#dashboard_quick_press {
+	display: none !important;
+}
+
 .diary-years {
 	margin: 0 -20px;
 
@@ -14,6 +26,10 @@
 		box-sizing: border-box;
 	    -moz-box-sizing: border-box;
 	    -webkit-box-sizing: border-box;
+
+	    &.hidden-year {
+	    	box-shadow: inset 0px 0px 0px 3px #ca4a1f !important;
+	    }
 
 		&:hover,
 		&.focus {
@@ -118,6 +134,18 @@
 
 	}
 
+	.hide-month,
+	.show-month {
+		margin-top: -3px;
+		margin-bottom: 1em;
+
+		i {
+			display: block;
+			color: #868686;
+			margin-top: 5px;
+		}
+	}
+
 	.description {
 		h3 {
 			margin-top: 0;
@@ -138,6 +166,10 @@
 
 body.post-php,
 body.post-new-php {
+
+	#excerpt {
+		height: 150px !important;
+	}
 
 	.imgevr-get-premium {
 		display: none;
