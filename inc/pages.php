@@ -9,7 +9,7 @@
 			if(isset($_GET['sidebar'])) {
 				$sidebar = true;
 				$category = get_term_by('id', $_GET['sidebar'], 'category');
-				$posts = get_posts(['posts_per_page' => -1, 'category' => $category->term_id, 'orderby' => 'menu_order', 'order' => 'ASC']);
+				$posts = get_posts(['posts_per_page' => -1, 'category' => $category->term_id, 'orderby' => 'menu_order', 'order' => 'ASC', 'post_status' => 'any']);
 			}
 			if(isset($_GET['period'])) {
 				$period = explode('-', $_GET['period']);
@@ -23,7 +23,7 @@
 					wp_insert_term(ucfirst($month_name), 'category', ['parent' => $year->term_id, 'slug' => $month_name . '-' . $year_name]);
 					$category = get_term_by('slug', $_GET['period'], 'category');
 				} 
-				$posts = get_posts(['posts_per_page' => -1, 'category' => $category->term_id, 'orderby' => 'menu_order', 'order' => 'ASC']);
+				$posts = get_posts(['posts_per_page' => -1, 'category' => $category->term_id, 'orderby' => 'menu_order', 'order' => 'ASC', 'post_status' => 'any']);
 				//print_r($month_posts);
 				
 				$hidden_months = json_decode(get_option('wdeditor_hidden_months'), true);
