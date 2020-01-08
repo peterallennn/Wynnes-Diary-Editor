@@ -34,6 +34,9 @@
 									<img src="<?= get_the_post_thumbnail_url($post->ID) ?>" height="20" class="post-image">
 								<?php endif; ?>
 								<span class="post-title"><?= $post->post_title ?></span>
+								<?php if($post->post_status == 'draft') : ?>
+									<code>DRAFT</code>
+								<?php endif; ?>
 							</td>
 							<td>
 								<span class="edit"><a href="/wp-admin/post.php?post=<?= $post->ID ?>&action=edit">Edit</a> |</span>
@@ -51,7 +54,7 @@
 						$live_preview = get_category_link($category->term_id) . '?admin_preview';
 					} else {
 						$live_url = '/the-diary/' . $year->name . '/' . date('M', strtotime($category->name));
-						$live_preview = '/the-diary/' . $year->name . '/' . date('M', strtotime($category->name)) . '?admin_preview';
+						$live_preview = '/the-diary/' . $year->name . '/' . date('M', strtotime($category->name)) . '?admin_preview=true';
 					}
 				?>
 				<a href="<?= $live_url; ?>" target="_BLANK">View Live <i>(opens in a new tab)</i></a>
