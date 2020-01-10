@@ -39,7 +39,13 @@
 								<?php endif; ?>
 							</td>
 							<td>
-								<span class="edit"><a href="/wp-admin/post.php?post=<?= $post->ID ?>&action=edit">Edit</a> |</span>
+								<span class="edit">
+									<?php if($sidebar) : ?>
+										<a href="/wp-admin/post.php?post=<?= $post->ID ?>&action=edit&sidebar=<?= $category->term_id; ?>">Edit</a>
+									<?php else : ?>
+										<a href="/wp-admin/post.php?post=<?= $post->ID ?>&action=edit">Edit</a>
+									<?php endif; ?>
+								 |</span>
 								<span class="trash"><a href="#" class="delete-post init-wdeditor-ajax" data-method="wdeditor_ajax_delete_post" data-post="<?= $post->ID ?>" data-confirm="Are you sure you want to delete <?= $post->post_title ?>?">Delete</a> |</span>
 								<span class="view"><a href="<?= get_permalink($post->ID) ?>">View Live</a></span>
 							</td>
@@ -62,16 +68,18 @@
 			</div>
 		</div>
 		<div class="description col-md-5">
-			<?php if(!in_array($category->term_id, $hidden_months)) : ?>
-				<div class="hide-month">
-					<label><input type="checkbox" name="hide_month" class="init-wdeditor-ajax" data-method="wdeditor_ajax_hide_month" data-month="<?= $category->term_id ?>" autocomplete="off"> Hide <?= $category->name ?> from the public</label>
-					<i>Note: Whilst logged in as an admin, the month will still be visible within the diary. This will only affect public users or in other words, users that are not logged in to the WordPress admin.</i>
-				</div>
-			<?php else: ?>
-				<div class="show-month">
-					<label><input type="checkbox" name="show_month" class="init-wdeditor-ajax" data-method="wdeditor_ajax_show_month" data-month="<?= $category->term_id ?>" autocomplete="off" checked> Hide <?= $category->name ?> from the public</label>
-					<i>Note: Whilst logged in as an admin, the month will still be visible within the diary. This will only affect public users or in other words, users that are not logged in to the WordPress admin.</i>
-				</div>
+			<?php if(!isset($_GET['sidebar'])) : ?>
+				<?php if(!in_array($category->term_id, $hidden_months)) : ?>
+					<div class="hide-month">
+						<label><input type="checkbox" name="hide_month" class="init-wdeditor-ajax" data-method="wdeditor_ajax_hide_month" data-month="<?= $category->term_id ?>" autocomplete="off"> Hide <?= $category->name ?> from the public</label>
+						<i>Note: Whilst logged in as an admin, the month will still be visible within the diary. This will only affect public users or in other words, users that are not logged in to the WordPress admin.</i>
+					</div>
+				<?php else: ?>
+					<div class="show-month">
+						<label><input type="checkbox" name="show_month" class="init-wdeditor-ajax" data-method="wdeditor_ajax_show_month" data-month="<?= $category->term_id ?>" autocomplete="off" checked> Hide <?= $category->name ?> from the public</label>
+						<i>Note: Whilst logged in as an admin, the month will still be visible within the diary. This will only affect public users or in other words, users that are not logged in to the WordPress admin.</i>
+					</div>
+				<?php endif; ?>
 			<?php endif; ?>
 
 			<h3>Edit the description for <?= $category->name ?></h3>

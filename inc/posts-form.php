@@ -42,6 +42,14 @@ add_action('init', 'posteditor_handle_post_form_fields');
 // Add a meta box containing the field above the editor
 function posteditor_date_categories_add_metabox()
 {
+	if(isset($_GET['post'])) {
+		$category = wp_get_post_categories($_GET['post'], ['fields' => 'all']);
+	}
+
+	if(isset($_GET['sidebar']) || isset($category[0]) && $category[0]->parent == 259) {	// Sidebar, don't add date metabox
+		return true;
+	}
+
 	if(isset($_GET['period']) || isset($_GET['post'])) {
 		add_meta_box('posteditor_date_categories_metabox', 'Date', 'posteditor_date_categories_metabox_content', 'post', 'side', 'high');
 	}
@@ -49,6 +57,7 @@ function posteditor_date_categories_add_metabox()
 function posteditor_date_categories_metabox_content()
 {
 	global $post;
+
 	if(isset($_GET['period']) || isset($_GET['post'])) {
 		echo wp_nonce_field( 'posteditor_date_categories_metabox', 'posteditor_date_categories_metabox_nonce' );
 		// Default month/year
@@ -159,7 +168,11 @@ function posteditor_save_post($post_id)
 	    wp_update_post($data);
 	}
 
-	if(isset($_GET['sidebar'])) {
+	if(isset($_GET['post'])) {
+		$category = wp_get_post_categories($_GET['post'], ['fields' => 'all']);
+	}
+
+	if(isset($_GET['sidebar']) || isset($category[0]) && $category[0]->parent == 259) {	// Sidebar, don't add date metabox
 		$category = get_term_by('id', $_GET['sidebar'], 'category');
 		// Assign post to the sidebar category
 		wp_set_post_categories($post_id, [$category->term_id]);
